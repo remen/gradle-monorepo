@@ -17,11 +17,18 @@ jobs:
       JAVA_OPTS: "-Xmx512m -XX:MaxMetaspaceSize=256m"
     steps:
     - uses: actions/checkout@v2
+    - name: Cache gradle build
+      uses: actions/cache@v2
+      with:
+        path: |
+          .gradle
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: "1" # Increment to clear cache
     - name: Set up JDK 16
       uses: actions/setup-java@v2
       with:
         java-version: '16'
         distribution: 'adopt'
-        cache: gradle
     - name: Build with Gradle
       run: ./gradlew build --build-cache --no-daemon
