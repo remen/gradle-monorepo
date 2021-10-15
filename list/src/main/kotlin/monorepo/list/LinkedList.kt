@@ -3,7 +3,7 @@
  */
 package monorepo.list
 
-class LinkedList {
+class LinkedList: Iterable<String> {
     private var head: Node? = null
 
     fun add(element: String) {
@@ -82,5 +82,16 @@ class LinkedList {
 
     private data class Node(val data: String) {
         var next: Node? = null
+    }
+
+    override fun iterator(): Iterator<String> {
+        return sequence {
+            var currentNode = head
+
+            while (currentNode != null) {
+                yield(currentNode.data)
+                currentNode = currentNode.next
+            }
+        }.iterator()
     }
 }
