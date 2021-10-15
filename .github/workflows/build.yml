@@ -16,11 +16,15 @@ jobs:
       GRADLE_OPTS: "-Dorg.gradle.daemon=false"
       JAVA_OPTS: "-Xmx512m -XX:MaxMetaspaceSize=256m"
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
     - name: Set up JDK 16
       uses: actions/setup-java@v2
       with:
         java-version: '16'
         distribution: 'adopt'
+
     - name: Gradle cache
       uses: burrunan/gradle-cache-action@v1
 
