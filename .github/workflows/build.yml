@@ -31,4 +31,4 @@ jobs:
         java-version: '16'
         distribution: 'adopt'
     - name: Build with Gradle
-      run: ./gradlew build --build-cache --no-daemon
+      run: ./gradlew build --build-cache
