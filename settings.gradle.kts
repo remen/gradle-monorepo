@@ -8,5 +8,7 @@
  */
 
 rootProject.name = "gradle-monorepo"
-include("app", "list", "utilities")
-include("apps:fizz", "apps:buzz", "apps:fizzbuzz")
+include(
+    "apps:fizz", "apps:buzz", "apps:fizzbuzz",
+    "modules:request-logger"
+)
