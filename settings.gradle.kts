@@ -12,5 +12,3 @@ include(
     "apps:fizz", "apps:buzz", "apps:fizzbuzz",
     "modules:request-logger"
 )
-
-println("GITHUB_TOKEN = " + System.getenv("GITHUB_TOKEN"))
