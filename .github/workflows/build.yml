@@ -55,6 +55,6 @@ jobs:
       run: cd dummy && docker build -t ghcr.io/remen/monorepo-dummy . && docker push ghcr.io/remen/monorepo-dummy:latest
 
     - name: Build with Gradle
-      run: ./gradlew jib --build-cache
+      run: ./gradlew jib --build-cache --stacktrace
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
