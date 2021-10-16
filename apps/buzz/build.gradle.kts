@@ -24,4 +24,7 @@ jib {
             password = System.getenv("GITHUB_TOKEN") ?: ""
         }
     }
+    container {
+        labels.put("org.opencontainers.image.source", "https://github.com/remen/gradle-monorepo")
+    }
 }
