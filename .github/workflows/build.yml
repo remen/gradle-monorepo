@@ -45,6 +45,9 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
 
+    - name: Try to use vanilla docker
+      run: docker --version
+
     - name: Build with Gradle
       run: ./gradlew jib --build-cache
       env:
