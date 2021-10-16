@@ -46,7 +46,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Try to use vanilla docker
-      run: cd dummy && docker build -t ghcr.io/remen/monorepo-dummy . && docker push
+      run: cd dummy && docker build -t ghcr.io/remen/monorepo-dummy . && docker push ghcr.io/remen/monorepo-dummy:latest
 
     - name: Build with Gradle
       run: ./gradlew jib --build-cache
