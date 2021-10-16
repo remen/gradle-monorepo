@@ -19,10 +19,10 @@ jib {
     from.image = "eclipse-temurin:16"
     to {
         image = "ghcr.io/remen/monorepo-fizz"
-        auth {
-            username = "remen"
-            password = System.getenv("GITHUB_TOKEN") ?: ""
-        }
+//        auth {
+//            username = "remen"
+//            password = System.getenv("GITHUB_TOKEN") ?: ""
+//        }
     }
     container {
         labels.put("org.opencontainers.image.source", "https://github.com/remen/gradle-monorepo")
