@@ -16,7 +16,7 @@ dependencies {
 }
 
 jib {
-    from.image = "openjdk:16"
+    from.image = "eclipse-temurin:16"
     to {
         image = "ghcr.io/remen/monorepo-buzz"
         auth {
