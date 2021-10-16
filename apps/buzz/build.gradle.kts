@@ -14,3 +14,14 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation(project(":modules:request-logger"))
 }
+
+jib {
+    from.image = "openjdk:16"
+    to {
+        image = "ghcr.io/remen/monorepo-buzz"
+        auth {
+            username = "remen"
+            password = System.getenv("GITHUB_TOKEN") ?: ""
+        }
+    }
+}
