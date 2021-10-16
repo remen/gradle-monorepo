@@ -42,3 +42,5 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew jib --build-cache
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
