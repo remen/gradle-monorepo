@@ -44,17 +44,15 @@ jobs:
         username: remen
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-#    - name: Login to ghcr.io
-#      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
-#      with:
-#        registry: ghcr.io
-#        username: ${{ github.actor }}
-#        password: ${{ secrets.GITHUB_TOKEN }}
+    - name: Login to ghcr.io
+      uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+      with:
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
 
 #    - name: Try to use vanilla docker
 #      run: cd dummy && docker build -t ghcr.io/remen/monorepo-dummy . && docker push ghcr.io/remen/monorepo-dummy:latest
 
     - name: Build with Gradle
-      run: ./gradlew jib --build-cache --stacktrace
-      env:
-        GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
+      run: ./gradlew jib --build-cache
