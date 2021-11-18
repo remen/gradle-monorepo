@@ -30,7 +30,7 @@ jobs:
       uses: actions/cache@v2
       with:
         path: |
-          .gradlem
+          .gradle
           ~/.gradle/caches
           ~/.gradle/wrapper
         key: "gradle-v1-${{github.run_id}}"
